@@ -4,11 +4,14 @@ createApp({
     return {
       randomEmails: [],
       lunghezza: 0,
+      loading: false,
     };
   },
   mounted() {
+    this.loading = true;
     for (let i = 0; i < 10; i++) {
       axios
+
         .get("https://flynn.boolean.careers/exercises/api/random/mail")
         .then((response) => {
           console.log(response);
@@ -16,6 +19,9 @@ createApp({
 
           this.lunghezza = this.randomEmails.length;
           console.log(this.lunghezza);
+          if (this.randomEmails.length === 10) {
+            this.loading = false;
+          }
         });
     }
   },
