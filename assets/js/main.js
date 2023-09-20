@@ -3,7 +3,7 @@ createApp({
   data() {
     return {
       randomEmails: [],
-      contatore: 0,
+      lunghezza: 0,
     };
   },
   mounted() {
@@ -13,7 +13,9 @@ createApp({
         .then((response) => {
           console.log(response);
           this.randomEmails.push(response.data.response);
-          contatore++;
+
+          lunghezza = this.randomEmails.length;
+          console.log(lunghezza);
         });
     }
   },
