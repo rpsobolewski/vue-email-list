@@ -14,8 +14,8 @@ createApp({
           console.log(response);
           this.randomEmails.push(response.data.response);
 
-          lunghezza = this.randomEmails.length;
-          console.log(lunghezza);
+          this.lunghezza = this.randomEmails.length;
+          console.log(this.lunghezza);
         });
     }
   },
