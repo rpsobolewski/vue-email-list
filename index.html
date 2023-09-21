@@ -13,11 +13,14 @@
     <body>
         <div id="app">
             <div v-if="loading">
-                <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+                <div class="lds-ripple"><div></div><div></div></div>
             </div>
-            <div v-for="n in 10" v-show="lunghezza == 10">
-                {{ randomEmails[n-1] }}
-            </div>
+            <ol>
+
+                <li v-for="n in 10" v-show="lunghezza == 10">
+                    {{ randomEmails[n-1] }}
+                </li>
+            </ol>
 
         </div>
         <script
