@@ -15,9 +15,9 @@
             <div v-if="loading">
                 <div class="lds-ripple"><div></div><div></div></div>
             </div>
-            <ol>
+            <ol v-show="lunghezza == 10">
 
-                <li v-for="n in 10" v-show="lunghezza == 10">
+                <li v-for="n in 10">
                     {{ randomEmails[n-1] }}
                 </li>
             </ol>
